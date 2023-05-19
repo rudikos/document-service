@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  clamav:
+    image: mkodockx/docker-clamav
+    restart: unless-stopped
+    ports:
+      - "3310:3310"
+    volumes:
+      - ./clamav-data:/var/lib/clamav
+    command: ["clamd"]

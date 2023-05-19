@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.6'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.workwolf'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.apache.tika:tika-core:2.8.0'
+    implementation 'org.apache.tika:tika-parsers:2.8.0'
+    implementation 'org.apache.tika:tika-parsers-standard-package:2.8.0'
+    implementation 'uk.ac.gate:gate-core:9.0.1'
+    compileOnly 'uk.ac.gate.plugins:annie:9.1'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation 'xyz.capybara:clamav-client:2.1.2'
+
+
+
+//    implementation 'org.apache.tika:tika-bom:2.8.0'
+//implementation 'org.apache.tika:tika-async-cli:2.8.0'
+
+//    implementation 'org.apache.poi:poi:5.2.3'
+    implementation 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+    annotationProcessor "org.projectlombok:lombok:1.18.26"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
