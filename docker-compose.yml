@@ -5,6 +5,4 @@ services:
     restart: unless-stopped
     ports:
       - "3310:3310"
-    volumes:
-      - ./clamav-data:/var/lib/clamav
     command: ["clamd"]
